@@ -7,343 +7,358 @@
   
   <style>
     :root {
-  --primary: #44535e;
-  --accent: #c9c8c5;
-  --background: #f4f4f2;
-  --white: #ffffff;
-  --text-dark: #1f2937;
-  --text-medium: #4b5563;
+      --primary: #44535e;
+      --accent: #c9c8c5;
+      --background: #f4f4f2;
+      --white: #ffffff;
+      --text-dark: #1f2937;
+      --text-medium: #4b5563;
+      --section1-bg: linear-gradient(to right, #d8d8d6, #c9c8c5);
 
-  /* Spacing */
-  --space-xs: 0.5rem;
-  --space-sm: 1rem;
-  --space-md: 1.5rem;
-  --space-lg: 2rem;
-  --space-xl: 4rem;
-}
+      /* Spacing */
+      --space-xs: 0.5rem;
+      --space-sm: 1rem;
+      --space-md: 1.5rem;
+      --space-lg: 2rem;
+      --space-xl: 4rem;
+    }
 
-body {
-  margin: 0;
-  font-family: 'Inter', sans-serif;
-  background-color: var(--background);
-  color: var(--text-dark);
-  font-size: 1rem;
-  line-height: 1.6;
-}
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background-color: var(--background);
+      color: var(--text-dark);
+      font-size: 1rem;
+      line-height: 1.6;
+    }
 
-nav {
-  background-color: var(--primary);
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: var(--space-sm);
-  padding: var(--space-sm) var(--space-lg);
-}
+    nav {
+      background-color: var(--primary);
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: var(--space-sm);
+      padding: var(--space-sm) var(--space-lg);
+    }
 
-nav a {
-  color: var(--white);
-  text-decoration: none;
-  font-weight: 500;
-  font-size: 1rem;
-  padding: var(--space-xs) var(--space-sm);
-  border-radius: 0.375rem;
-  transition: background 0.3s ease;
-}
+    nav a {
+      color: var(--white);
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 1rem;
+      padding: var(--space-xs) var(--space-sm);
+      transition: background 0.3s ease;
+    }
 
-nav a:hover,
-nav a.active {
-  background-color: rgba(255, 255, 255, 0.15);
-}
+    nav a:hover,
+    nav a.active {
+      background-color: rgba(255, 255, 255, 0.15);
+    }
 
-header {
-  background: linear-gradient(to right, #d8d8d6, #c9c8c5);
-  padding: var(--space-xl) var(--space-lg);
-  text-align: center;
-}
+    header {
+      background: var(--section1-bg);
+      padding: var(--space-xl) var(--space-lg);
+      text-align: center;
+    }
 
-header h1 {
-  font-size: 2.5rem;
-  font-weight: 700;
-  margin-bottom: var(--space-sm);
-}
+    header h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: var(--space-sm);
+      color: var(--text-dark);
+    }
 
-section {
-  padding: var(--space-xl) var(--space-lg);
-  max-width: 800px;
-  margin: auto;
-  background: var(--white);
-  border-radius: 1rem;
-  box-shadow: 0 4px 12px rgba(202, 24, 24, 0.06);
-}
+    header p {
+      color: var(--text-dark);
+      max-width: 800px;
+      margin: 0 auto;
+    }
 
-h2 {
-  font-size: 1.75rem;
-  color: var(--primary);
-  margin-bottom: var(--space-sm);
-}
+    section {
+      padding: var(--space-xl) var(--space-lg);
+      max-width: 800px;
+      margin: auto;
+      background: var(--white);
+    }
 
-p {
-  color: var(--text-medium);
-  margin-bottom: var(--space-md);
-}
+    h2 {
+      font-size: 1.75rem;
+      color: var(--primary);
+      margin-bottom: var(--space-sm);
+    }
 
-form {
-  display: grid;
-  gap: var(--space-md);
-}
+    p {
+      color: var(--text-medium);
+      margin-bottom: var(--space-md);
+    }
 
-label {
-  font-weight: 600;
-}
+    form {
+      display: grid;
+      gap: var(--space-md);
+    }
 
-input,
-select,
-textarea {
-  width: 100%;
-  padding: var(--space-sm);
-  border: 1px solid #ccc;
-  border-radius: 0.5rem;
-  font-size: 1rem;
-  font-family: inherit;
-}
+    label {
+      font-weight: 600;
+    }
 
-.radio-group,
-.checkbox-group {
-  display: flex;
-  gap: var(--space-sm);
-  align-items: center;
-  flex-wrap: wrap;
-}
+    input,
+    select,
+    textarea {
+      width: 100%;
+      padding: var(--space-sm);
+      border: 1px solid #ccc;
+      font-size: 1rem;
+      font-family: inherit;
+    }
 
-.form-group {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-xs);
-}
+    .radio-group,
+    .checkbox-group {
+      display: flex;
+      gap: var(--space-sm);
+      align-items: center;
+      flex-wrap: wrap;
+    }
 
-button {
-  background-color: var(--primary);
-  color: var(--white);
-  padding: var(--space-sm) var(--space-md);
-  border: none;
-  border-radius: 0.5rem;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: background 0.3s ease;
-  margin-top: var(--space-md);
-}
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-xs);
+    }
 
-button:hover {
-  background-color: #333f4d;
-}
+    button {
+      background-color: var(--primary);
+      color: var(--white);
+      padding: var(--space-sm) var(--space-md);
+      border: none;
+      border-radius: 0.5rem;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.3s ease;
+      margin-top: var(--space-md);
+    }
 
-.section-title {
-  text-align: center;
-  font-size: 2rem;
-  font-weight: 600;
-  margin-bottom: var(--space-xl);
-  color: var(--primary);
-}
+    button:hover {
+      background-color: #333f4d;
+    }
 
-.grid {
-  display: grid;
-  gap: var(--space-lg);
-}
+    .section-title {
+      text-align: center;
+      font-size: 2rem;
+      font-weight: 600;
+      margin-bottom: var(--space-xl);
+      color: var(--primary);
+    }
 
-.grid-4 {
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-}
+    .opportunities-title {
+      text-align: center;
+      font-size: 1.75rem;
+      font-weight: 600;
+      margin-bottom: var(--space-lg);
+      color: var(--primary);
+    }
 
-.card {
-  background-color: var(--white);
-  padding: var(--space-lg);
-  border-radius: 1rem;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
-  text-align: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
-  position: relative;
-  overflow: hidden;
-  border: 2px solid transparent;
-}
+    .grid {
+      display: grid;
+      gap: var(--space-lg);
+    }
 
-.card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
-  border-color: var(--primary);
-}
+    .grid-4 {
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
 
-.card:hover img {
-  transform: scale(1.15);
-}
+    .card {
+      background-color: var(--white);
+      padding: var(--space-lg);
+      border-radius: 1rem;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
+      position: relative;
+      overflow: hidden;
+      border: 2px solid transparent;
+    }
 
-.card div img {
-  transition: transform 0.3s ease;
-}
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+      border-color: var(--primary);
+    }
 
-.card div {
-  font-size: 2rem;
-  margin-bottom: var(--space-sm);
-}
+    .card:hover img {
+      transform: scale(1.15);
+    }
 
-.card h3 {
-  margin-top: 0;
-  font-size: 1.25rem;
-  color: var(--text-dark);
-}
+    .card div img {
+      transition: transform 0.3s ease;
+    }
 
-.card p {
-  color: var(--text-medium);
-}
+    .card div {
+      font-size: 2rem;
+      margin-bottom: var(--space-sm);
+    }
 
-.why-work {
-  padding: var(--space-xl) var(--space-lg);
-  max-width: 1200px;
-  margin: auto;
-}
+    .card h3 {
+      margin-top: 0;
+      font-size: 1.25rem;
+      color: var(--text-dark);
+    }
 
-.why-container {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-sm);
-  align-items: center;
-}
+    .card p {
+      color: var(--text-medium);
+    }
 
-.why-list {
-  display: flex;
-  gap: var(--space-lg);
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  flex-wrap: wrap;
-  justify-content: center;
-  width: 100%;
-}
+    .why-work {
+      padding: var(--space-xl) var(--space-lg);
+      max-width: 1200px;
+      margin: auto;
+    }
 
-.why-list li {
-  cursor: pointer;
-  text-align: center;
-  padding: var(--space-xs) var(--space-sm);
-  border-radius: 0.8rem;
-  background: #fff;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  transition: background-color 0.3s ease;
-  flex: 0 0 auto;
-}
+    .why-container {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-sm);
+      align-items: center;
+    }
 
-.why-list li.active,
-.why-list li:hover {
-  background: var(--primary);
-  color: white;
-}
+    .why-list {
+      display: flex;
+      gap: var(--space-lg);
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      flex-wrap: wrap;
+      justify-content: center;
+      width: 100%;
+    }
 
-.why-list li:hover img,
-.why-list li:active img {
-  transform: scale(1.2);
-}
+    .why-list li {
+      cursor: pointer;
+      text-align: center;
+      padding: var(--space-xs) var(--space-sm);
+      border-radius: 0.8rem;
+      background: #fff;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      transition: background-color 0.3s ease;
+      flex: 0 0 auto;
+    }
 
-.why-list li img {
-  max-width: 50px;
-  margin-bottom: var(--space-xs);
-  margin-left: auto;
-  margin-right: auto;
-  transition: transform 0.3s ease;
-}
+    .why-list li.active,
+    .why-list li:hover {
+      background: var(--primary);
+      color: white;
+    }
 
-.why-list img {
-  width: 48px;
-  height: 48px;
-  background-color: #f0f0f0;
-  border-radius: 50%;
-  padding: var(--space-xs);
-}
+    .why-list li:hover img,
+    .why-list li:active img {
+      transform: scale(1.2);
+    }
 
-.why-list span {
-  font-weight: 600;
-  color: var(--text-dark);
-}
+    .why-list li img {
+      max-width: 50px;
+      margin-bottom: var(--space-xs);
+      margin-left: auto;
+      margin-right: auto;
+      transition: transform 0.3s ease;
+    }
 
-.why-list li.active span,
-.why-list li:hover span {
-  color: var(--white);
-}
+    .why-list img {
+      width: 48px;
+      height: 48px;
+      background-color: #f0f0f0;
+      border-radius: 50%;
+      padding: var(--space-xs);
+    }
 
-.why-content {
-  width: 100%;
-  background: #f9f9f9;
-  border-radius: 1rem;
-  padding: var(--space-lg);
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-  min-height: 140px;
-  text-align: center;
-}
+    .why-list span {
+      font-weight: 600;
+      color: var(--text-dark);
+    }
 
-.content-panel {
-  display: none;
-}
+    .why-list li.active span,
+    .why-list li:hover span {
+      color: var(--white);
+    }
 
-.content-panel:not(.hidden) {
-  display: block;
-}
+    .why-content {
+      width: 100%;
+      background: #f9f9f9;
+      padding: var(--space-lg);
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+      min-height: 140px;
+      text-align: center;
+    }
 
-.content-panel.hidden {
-  opacity: 0;
-  visibility: hidden;
-  z-index: 0;
-}
+    .content-panel {
+      display: none;
+    }
 
-/* Responsive tweaks */
-@media (max-width: 768px) {
-  .why-list li {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
+    .content-panel:not(.hidden) {
+      display: block;
+    }
 
-  .why-container {
-    flex-direction: column;
-  }
+    .content-panel.hidden {
+      opacity: 0;
+      visibility: hidden;
+      z-index: 0;
+    }
 
-  .why-content {
-    position: static;
-    min-height: auto;
-    margin-top: var(--space-lg);
-  }
+    .opportunity-card {
+      background-color: #ffffff;
+      border-radius: 1rem;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+      width: 180px;
+      text-align: center;
+      padding: 1rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease, color 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
 
-  .content-panel {
-    position: relative;
-  }
-}
-.opportunity-card {
-  background-color: #ffffff;
-  border-radius: 1rem;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
-  width: 180px;
-  text-align: center;
-  padding: 1rem;
-  cursor: pointer;
-  transition: background-color 0.3s ease, color 0.3s ease;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
+    .opportunity-card:hover,
+    .opportunity-card.active {
+      background-color: #374151;
+      color: #ffffff;
+    }
 
-.opportunity-card:hover,
-.opportunity-card.active {
-  background-color: #374151; /* dark gray */
-  color: #ffffff;
-}
+    .opportunity-card img {
+      width: 60px;
+      height: 60px;
+      object-fit: contain;
+      margin-bottom: 0.5rem;
+    }
 
-.opportunity-card img {
-  width: 60px;
-  height: 60px;
-  object-fit: contain;
-  margin-bottom: 0.5rem;
-}
+    .title-text {
+      font-weight: bold;
+      font-size: 1rem;
+    }
 
-.title-text {
-  font-weight: bold;
-  font-size: 1rem;
-}
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2rem;
+      }
+      
+      .why-list li {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+
+      .why-container {
+        flex-direction: column;
+      }
+
+      .why-content {
+        position: static;
+        min-height: auto;
+        margin-top: var(--space-lg);
+      }
+
+      .content-panel {
+        position: relative;
+      }
+    }
   </style>
 </head>
 <body>
@@ -359,7 +374,7 @@ button:hover {
     <a href="index.html" class="active">Careers</a>
   </nav>
 
-  <!-- Hero Section -->
+  <!-- Hero Section with section1 color -->
   <header>
     <h1>Join Our Team</h1>
     <p>
@@ -392,94 +407,62 @@ button:hover {
       <div class="card">
         <div><img src="location-pin.png" alt="Rooted Icon" style="width:48px; height:48px;"></div>
         <h3>Rooted in XXX</h3>
-        <p>Be part of our legacy, contributing to South India’s rich textile heritage with every piece we create.</p>
+        <p>Be part of our legacy, contributing to South India's rich textile heritage with every piece we create.</p>
       </div>
     </div>
   </section>
 
- <!-- Opportunities -->
-<section class="why-work">
-  <h2 class="section-title">Opportunities</h2>
-  <div class="why-container">
-    <ul class="why-list" id="opportunities-list">
-      <li class="opportunity-card active" data-index="0">
-        <div class="icon-wrapper">
+  <!-- Opportunities -->
+  <section class="why-work">
+    <h2 class="opportunities-title">Opportunities</h2>
+    <div class="why-container">
+      <ul class="why-list" id="opportunities-list">
+        <li class="opportunity-card active" data-index="0">
           <img src="developer.png" alt="Software Engineer Icon" />
-        </div>
-        <span class="title-text">Software Engineer</span>
-      </li>
-      <li class="opportunity-card" data-index="1">
-        <div class="icon-wrapper">
+          <span class="title-text">Software Engineer</span>
+        </li>
+        <li class="opportunity-card" data-index="1">
           <img src="expert.png" alt="Quality Control Icon" />
-        </div>
-        <span class="title-text">Quality Control Specialist</span>
-      </li>
-      <li class="opportunity-card" data-index="2">
-        <div class="icon-wrapper">
+          <span class="title-text">Quality Control</span>
+        </li>
+        <li class="opportunity-card" data-index="2">
           <img src="creativity.png" alt="Textile Designer Icon" />
-        </div>
-        <span class="title-text">Textile Designer</span>
-      </li>
-      <li class="opportunity-card" data-index="3">
-        <div class="icon-wrapper">
+          <span class="title-text">Textile Designer</span>
+        </li>
+        <li class="opportunity-card" data-index="3">
           <img src="supply-chain.png" alt="Logistics Manager Icon" />
-        </div>
-        <span class="title-text">Logistics Manager</span>
-      </li>
-    </ul>
+          <span class="title-text">Logistics Manager</span>
+        </li>
+      </ul>
 
-    <div class="why-content">
-      <div class="content-panel" id="content-0">
-        <h3>Software Engineer</h3>
-        <p>
-          Develop and maintain cutting-edge software systems that optimize our manufacturing processes and enhance customer experiences.
-        </p>
-      </div>
-      <div class="content-panel hidden" id="content-1">
-        <h3>Quality Control Specialist</h3>
-        <p>
-          Ensure our products meet the highest standards of quality through rigorous testing and inspection protocols.
-        </p>
-      </div>
-      <div class="content-panel hidden" id="content-2">
-        <h3>Textile Designer</h3>
-        <p>
-          Create innovative textile patterns and designs that blend tradition with modern aesthetics.
-        </p>
-      </div>
-      <div class="content-panel hidden" id="content-3">
-        <h3>Logistics Manager</h3>
-        <p>
-          Oversee supply chain operations to ensure timely delivery and efficient distribution worldwide.
-        </p>
+      <div class="why-content">
+        <div class="content-panel" id="content-0">
+          <h3>Software Engineer</h3>
+          <p>
+            Develop and maintain cutting-edge software systems that optimize our manufacturing processes and enhance customer experiences.
+          </p>
+        </div>
+        <div class="content-panel hidden" id="content-1">
+          <h3>Quality Control</h3>
+          <p>
+            Ensure our products meet the highest standards of quality through rigorous testing and inspection protocols.
+          </p>
+        </div>
+        <div class="content-panel hidden" id="content-2">
+          <h3>Textile Designer</h3>
+          <p>
+            Create innovative textile patterns and designs that blend tradition with modern aesthetics.
+          </p>
+        </div>
+        <div class="content-panel hidden" id="content-3">
+          <h3>Logistics Manager</h3>
+          <p>
+            Oversee supply chain operations to ensure timely delivery and efficient distribution worldwide.
+          </p>
+        </div>
       </div>
     </div>
-  </div>
-</section>
-
-    
-
-  <script>
-    // JS for Opportunities
-    const listItems = document.querySelectorAll('#opportunities-list li');
-    const panels = document.querySelectorAll('.why-content .content-panel');
-
-    listItems.forEach((item) => {
-      item.addEventListener('click', () => {
-        
-        listItems.forEach(i => i.classList.remove('active'));
-        panels.forEach(p => p.classList.add('hidden'));
-
- 
-        item.classList.add('active');
-        const idx = item.getAttribute('data-index');
-        document.getElementById('content-' + idx).classList.remove('hidden');
-      });
-    });
-  </script>
-  
-</head>
-<body>
+  </section>
 
   <header>
     <h1>How to Apply</h1>
@@ -514,24 +497,6 @@ button:hover {
         </div>
         <input type="text" id="custom-gender" placeholder="Please specify" style="display:none; margin-top: 0.5rem;" />
       </div>
-
-      <script>
-        const genderRadios = document.querySelectorAll('input[name="gender"]');
-        const customGenderInput = document.getElementById('custom-gender');
-        const otherRadio = document.getElementById('gender-other-radio');
-
-        genderRadios.forEach(radio => {
-          radio.addEventListener('change', () => {
-            if (otherRadio.checked) {
-              customGenderInput.style.display = 'block';
-              customGenderInput.required = true;
-            } else {
-              customGenderInput.style.display = 'none';
-              customGenderInput.required = false;
-            }
-          });
-        });
-      </script>
 
       <div class="form-group">
         <label for="contact">Contact Number</label>
@@ -581,7 +546,6 @@ button:hover {
           <label>
             <input type="radio" name="department" value="Other" id="dept-other-radio"> Other
           </label>
-          <!-- hidden custom field -->
           <input
             type="text"
             id="dept-other-text"
@@ -590,30 +554,63 @@ button:hover {
             style="display: none; margin-top: 0.5rem;"
           />
         </div>
-        <script>
-            const deptRadios = document.querySelectorAll('input[name="department"]');
-            const otherDeptRadio = document.getElementById('dept-other-radio');
-            const otherDeptText  = document.getElementById('dept-other-text');
-
-            deptRadios.forEach(radio => {
-              radio.addEventListener('change', () => {
-                if (otherDeptRadio.checked) {
-                  otherDeptText.style.display = 'block';
-                  otherDeptText.required = true;
-                } else {
-                  otherDeptText.style.display = 'none';
-                  otherDeptText.required = false;
-                  otherDeptText.value = '';
-                }
-              });
-            });
-        </script>
-
       </div>
 
       <button type="submit">Submit Application</button>
     </form>
   </section>
 
+  <script>
+    // JS for Opportunities
+    const listItems = document.querySelectorAll('#opportunities-list li');
+    const panels = document.querySelectorAll('.why-content .content-panel');
+
+    listItems.forEach((item) => {
+      item.addEventListener('click', () => {
+        listItems.forEach(i => i.classList.remove('active'));
+        panels.forEach(p => p.classList.add('hidden'));
+
+        item.classList.add('active');
+        const idx = item.getAttribute('data-index');
+        document.getElementById('content-' + idx).classList.remove('hidden');
+      });
+    });
+
+    // JS for Gender Other option
+    const genderRadios = document.querySelectorAll('input[name="gender"]');
+    const customGenderInput = document.getElementById('custom-gender');
+    const otherRadio = document.getElementById('gender-other-radio');
+
+    genderRadios.forEach(radio => {
+      radio.addEventListener('change', () => {
+        if (otherRadio.checked) {
+          customGenderInput.style.display = 'block';
+          customGenderInput.required = true;
+        } else {
+          customGenderInput.style.display = 'none';
+          customGenderInput.required = false;
+        }
+      });
+    });
+
+    // JS for Department Other option
+    const deptRadios = document.querySelectorAll('input[name="department"]');
+    const otherDeptRadio = document.getElementById('dept-other-radio');
+    const otherDeptText  = document.getElementById('dept-other-text');
+
+    deptRadios.forEach(radio => {
+      radio.addEventListener('change', () => {
+        if (otherDeptRadio.checked) {
+          otherDeptText.style.display = 'block';
+          otherDeptText.required = true;
+        } else {
+          otherDeptText.style.display = 'none';
+          otherDeptText.required = false;
+          otherDeptText.value = '';
+        }
+      });
+    });
+  </script>
+  
 </body>
 </html>

@@ -27,6 +27,7 @@
       margin: 0;
       padding: 0;
     }
+
     html, body {
       width: 100%;
       overflow-x: hidden;
@@ -47,6 +48,7 @@
       gap: 1rem;
       padding: 1rem 2rem;
     }
+
     nav a {
       color: var(--white);
       text-decoration: none;
@@ -56,12 +58,12 @@
       border-radius: 0.375rem;
       transition: background 0.3s ease;
     }
+
     nav a:hover,
     nav a.active {
       background-color: rgba(255, 255, 255, 0.15);
     }
 
-    /* Generic section styling */
     section {
       padding: 24px 20px;
       max-width: 1100px;
@@ -69,7 +71,6 @@
       text-align: center;
     }
 
-    /* Hero section */
     .hero-section {
       width: 100vw;
       max-width: none;
@@ -97,17 +98,20 @@
       opacity: 0;
       animation: fadeInUp 1s ease forwards;
     }
+
     .hero-content h2 {
       font-size: 2.5rem;
       font-weight: 800;
       color: var(--white);
       margin-bottom: 16px;
     }
+
     .hero-content p {
       font-size: 1.2rem;
       color: var(--white);
       margin-bottom: 24px;
     }
+
     .cta-button {
       background: #425260;
       color: white;
@@ -125,13 +129,13 @@
       to   { opacity: 1; transform: translateY(0); }
     }
 
-    /* Other sections */
     h2 {
       font-size: 2rem;
       font-weight: 800;
       color: var(--highlight);
       margin-bottom: 12px;
     }
+
     p {
       font-size: 1.125rem;
       color: var(--text-primary);
@@ -146,10 +150,12 @@
       transform: translateY(30px);
       transition: all 0.6s ease;
     }
+
     .cards.visible {
       opacity: 1;
       transform: translateY(0);
     }
+
     .card {
       background: var(--tile-bg);
       border-radius: 16px;
@@ -158,16 +164,19 @@
       text-align: center;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
+
     .card img {
       max-width: 30%;
       height: auto;
       object-fit: contain;
     }
+
     .card h3 {
       font-size: 1rem;
       color: #3b444c;
       margin-bottom: 8px;
     }
+
     .card p {
       font-size: 14px;
       color: #555;
@@ -177,11 +186,13 @@
     header {
       background: linear-gradient(to right, #d8d8d6, #c9c8c5);
     }
+
     .commitment-section {
       opacity: 0;
       transform: translateY(50px);
       transition: all 0.6s ease-out;
     }
+
     .commitment-section.visible {
       opacity: 1;
       transform: translateY(0);
@@ -197,6 +208,7 @@
       margin: 0 auto;
       flex-wrap: nowrap;
     }
+
     .split-section img {
       width: 50%;
       max-width: 550px;
@@ -204,16 +216,15 @@
       object-fit: cover;
       border-radius: 12px;
     }
+
     .split-text {
       width: 50%;
       max-width: 550px;
-      text-align: center; 
+      text-align: center;
     }
-    .split-text h2 {
-      text-align: center; 
-    }
-    .split-text p {
-      text-align: center; 
+
+    .split-text h2, .split-text p {
+      text-align: center;
     }
 
     .factory-section {
@@ -221,86 +232,12 @@
       transform: translateY(50px);
       transition: all 0.6s ease-out;
     }
+
     .factory-section.visible {
       opacity: 1;
       transform: translateY(0);
     }
 
-    /* Updated Certificates Section */
-    .certificates-section {
-      background: var(--tile-bg);
-      padding: 40px 20px;
-      text-align: center;
-    }
-    .certificates-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 30px;
-      margin-top: 30px;
-      max-width: 1200px;
-      margin-left: auto;
-      margin-right: auto;
-      justify-items: center;
-    }
-    .certificate-item {
-      background: white;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-      transition: transform 0.3s ease;
-      width: 100%;
-      max-width: 220px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-    }
-    .certificate-item:hover {
-      transform: translateY(-5px);
-    }
-    .certificate-item img {
-      width: auto;
-      max-width: 100%;
-      height: auto;
-      max-height: 120px;
-      object-fit: contain;
-    }
-
-    .team-section .cards {
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 30px;
-      margin-top: 24px;
-    }
-    .team-section .card {
-      padding: 24px 16px;
-    }
-    .team-section .card img {
-      width: 150px;
-      height: 150px;
-      border-radius: 50%;
-      object-fit: cover;
-      margin-bottom: 16px;
-    }
-    .team-section .card h3 {
-      font-size: 1.1rem;
-      margin-bottom: 6px;
-    }
-    .team-section .card p {
-      font-size: 0.9rem;
-      color: var(--text-medium);
-    }
-
-    .certificates-section {
-      opacity: 0;
-      transform: translateY(50px);
-      transition: all 0.6s ease-out;
-    }
-    .certificates-section.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    /* Media query for smaller screens */
     @media (max-width: 768px) {
       .hero-content h2 {
         font-size: 2rem;
@@ -319,18 +256,11 @@
         max-width: 100%;
         text-align: center;
       }
-      .certificates-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 20px;
-      }
     }
 
     @media (max-width: 480px) {
       .split-section img {
         height: 150px;
-      }
-      .certificates-grid {
-        grid-template-columns: 1fr;
       }
     }
   </style>
@@ -399,60 +329,6 @@
     </section>
   </header>
 
-  <!-- Centered Certificates Section -->
-  <section class="certificates-section" id="certificates">
-    <h2>Our Certifications</h2>
-    <p>We maintain the highest industry standards through rigorous testing and certification processes.</p>
-    
-    <div class="certificates-grid">
-      <div class="certificate-item">
-        <img src="cert1.jpg" alt="ISO 9001 Certification">
-      </div>
-      <div class="certificate-item">
-        <img src="cert2.jpg" alt="OEKO-TEX Certification">
-      </div>
-      <div class="certificate-item">
-        <img src="cert3.jpg" alt="BSCI Certification">
-      </div>
-      <div class="certificate-item">
-        <img src="cert4.jpg" alt="GOTS Certification">
-      </div>
-      <div class="certificate-item">
-        <img src="cert5.jpg" alt="Sedex Certification">
-      </div>
-      <div class="certificate-item">
-        <img src="cert6.jpg" alt="WRAP Certification">
-      </div>
-      <div class="certificate-item">
-        <img src="cert7.jpg" alt="REACH Compliance">
-      </div>
-      <div class="certificate-item">
-        <img src="cert8.jpg" alt="Organic Content Standard">
-      </div>
-    </div>
-  </section>
-
-  <section class="team-section">
-    <h2>Meet Our Team</h2>
-    <div class="cards visible">
-      <div class="card">
-        <img src="member1.jpg" alt="Team Member" />
-        <h3>Name</h3>
-        <p>Designation</p>
-      </div>
-      <div class="card">
-        <img src="member2.jpg" alt="Team Member" />
-        <h3>Name</h3>
-        <p>Designation</p>
-      </div>
-      <div class="card">
-        <img src="member3.jpg" alt="Team Member" />
-        <h3>Name</h3>
-        <p>Designation</p>
-      </div>
-    </div>
-  </section>
-
   <script>
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
@@ -464,7 +340,6 @@
 
     observer.observe(document.querySelector('#factory'));
     observer.observe(document.querySelector('#commitment'));
-    observer.observe(document.querySelector('#certificates'));
   </script>
 </body>
 </html>

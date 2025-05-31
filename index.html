@@ -79,7 +79,6 @@
       max-width: 800px;
       margin: auto;
       background: var(--white);
-      
     }
     
     h2.section-title {
@@ -102,53 +101,12 @@
       margin-bottom: var(--space-md);
     }
 
-    form {
-      display: grid;
-      gap: var(--space-md);
-    }
-
-    label {
-      font-weight: 600;
-    }
-
-    input,
-    select,
-    textarea {
-      width: 100%;
-      padding: var(--space-sm);
-      border: 1px solid #ccc;
-      font-size: 1rem;
-      font-family: inherit;
-    }
-
     .radio-group,
     .checkbox-group {
       display: flex;
       gap: var(--space-sm);
       align-items: center;
       flex-wrap: wrap;
-    }
-
-    .form-group {
-      display: flex;
-      flex-direction: column;
-      gap: var(--space-xs);
-    }
-
-    button {
-      background-color: var(--primary);
-      color: var(--white);
-      padding: var(--space-sm) var(--space-md);
-      border: none;
-      border-radius: 0.5rem;
-      font-size: 1rem;
-      cursor: pointer;
-      transition: background 0.3s ease;
-      margin-top: var(--space-md);
-    }
-
-    button:hover {
-      background-color: #333f4d;
     }
 
     .section-title {
@@ -344,6 +302,145 @@
       font-size: 1rem;
     }
 
+    .talent-pool {
+      background-color: var(--primary);
+      color: white;
+      padding: var(--space-xl) var(--space-lg);
+      text-align: center;
+    }
+
+    .talent-pool h2 {
+      font-size: 2rem;
+      margin-bottom: var(--space-md);
+    }
+
+    .talent-pool p {
+      max-width: 800px;
+      margin: 0 auto var(--space-lg);
+      color: white;
+    }
+
+    .talent-pool-btn {
+      background-color: white;
+      color: var(--primary);
+      padding: var(--space-sm) var(--space-md);
+      border: none;
+      border-radius: 0.5rem;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .talent-pool-btn:hover {
+      background-color: var(--accent);
+      transform: translateY(-2px);
+    }
+
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0,0,0,0.7);
+      z-index: 1000;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .modal-content {
+      background-color: white;
+      padding: var(--space-xl);
+      border-radius: 1rem;
+      max-width: 600px;
+      width: 90%;
+      position: relative;
+      animation: modalFadeIn 0.3s ease-out;
+    }
+
+    .close-modal {
+      position: absolute;
+      top: var(--space-sm);
+      right: var(--space-sm);
+      font-size: 1.5rem;
+      cursor: pointer;
+      background: none;
+      border: none;
+    }
+
+    .modal-form {
+      display: grid;
+      gap: var(--space-md);
+    }
+
+    .modal-form input,
+    .modal-form textarea {
+      width: 100%;
+      padding: var(--space-sm);
+      border: 1px solid #ccc;
+      font-size: 1rem;
+      font-family: inherit;
+    }
+
+    .modal-form button {
+      background-color: var(--primary);
+      color: white;
+      padding: var(--space-sm);
+      border: none;
+      border-radius: 0.5rem;
+      font-size: 1rem;
+      cursor: pointer;
+      margin-top: var(--space-md);
+    }
+
+    @keyframes modalFadeIn {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .notification-bell {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background-color: var(--primary);
+      color: white;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      z-index: 999;
+      transition: all 0.3s ease;
+    }
+
+    .notification-bell:hover {
+      transform: scale(1.1);
+    }
+
+    .notification-bell i {
+      font-size: 1.5rem;
+    }
+
+    .badge {
+      position: absolute;
+      top: -5px;
+      right: -5px;
+      background-color: #e74c3c;
+      color: white;
+      border-radius: 50%;
+      width: 24px;
+      height: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.75rem;
+    }
+
     @media (max-width: 768px) {
       header h1 {
         font-size: 2rem;
@@ -370,6 +467,7 @@
       }
     }
   </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
 
@@ -427,10 +525,6 @@
     <h2 class="opportunities-title">Opportunities</h2>
     <div class="why-container">
       <ul class="why-list" id="opportunities-list">
-        <li class="opportunity-card active" data-index="0">
-          <img src="developer.png" alt="Software Engineer Icon" />
-          <span class="title-text">Software Engineer</span>
-        </li>
         <li class="opportunity-card" data-index="1">
           <img src="expert.png" alt="Quality Control Icon" />
           <span class="title-text">Quality Control</span>
@@ -447,128 +541,105 @@
 
       <div class="why-content">
         <div class="content-panel" id="content-0">
-          <h3>Software Engineer</h3>
+          <h3>Our Team Structure</h3>
           <p>
-            Develop and maintain cutting-edge software systems that optimize our manufacturing processes and enhance customer experiences.
+            At XXX, we have specialized teams working in production, quality control, design, logistics, and administration. 
+            While we don't have current openings, we're always interested in connecting with talented professionals 
+            who share our passion for textile excellence.
           </p>
         </div>
         <div class="content-panel hidden" id="content-1">
-          <h3>Quality Control</h3>
+          <h3>Quality Control Team</h3>
           <p>
-            Ensure our products meet the highest standards of quality through rigorous testing and inspection protocols.
+            Our QC team ensures every product meets international standards through rigorous testing and inspection protocols.
           </p>
         </div>
         <div class="content-panel hidden" id="content-2">
-          <h3>Textile Designer</h3>
+          <h3>Design Team</h3>
           <p>
-            Create innovative textile patterns and designs that blend tradition with modern aesthetics.
+            Our creative designers blend traditional techniques with modern aesthetics to create innovative textile patterns.
           </p>
         </div>
         <div class="content-panel hidden" id="content-3">
-          <h3>Logistics Manager</h3>
+          <h3>Logistics Team</h3>
           <p>
-            Oversee supply chain operations to ensure timely delivery and efficient distribution worldwide.
+            Our logistics experts manage efficient global distribution to ensure timely delivery to clients worldwide.
           </p>
         </div>
       </div>
     </div>
   </section>
 
-  <header>
-    <h1>How to Apply</h1>
+  <!-- Talent Pool Section -->
+  <section class="talent-pool">
+    <h2>Join Our Talent Pool</h2>
     <p>
-      📩 Email your resume to <strong>[XXX]</strong><br />
-      📞 Or call us at <strong>+91-XXXXXXXXXX</strong> for walk-in opportunities at our Karur facility.
+      While we don't have current openings, we're always looking to connect with talented professionals. 
+      Share your details with us, and we'll notify you when opportunities matching your profile become available.
     </p>
-  </header>
-
-  <!-- Application Form -->
-  <section>
-    <h2>Career Application Form</h2>
-    <form>
-      <div class="form-group">
-        <label for="name">Full Name</label>
-        <input id="name" type="text" placeholder="Enter your full name" required>
-      </div>
-
-      <div class="form-group">
-        <label for="dob">Date of Birth</label>
-        <input id="dob" type="date" required>
-      </div>
-
-      <div class="form-group">
-        <label>Gender</label>
-        <div class="radio-group">
-          <label><input type="radio" name="gender" value="Male" required> Male</label>
-          <label><input type="radio" name="gender" value="Female"> Female</label>
-          <label>
-            <input type="radio" name="gender" value="Other" id="gender-other-radio"> Other
-          </label>
-        </div>
-        <input type="text" id="custom-gender" placeholder="Please specify" style="display:none; margin-top: 0.5rem;" />
-      </div>
-
-      <div class="form-group">
-        <label for="contact">Contact Number</label>
-        <input id="contact" type="tel" placeholder="+91-" required>
-      </div>
-
-      <div class="form-group">
-        <label for="email">Email Address</label>
-        <input id="email" type="email" required>
-      </div>
-
-      <div class="form-group">
-        <label for="address">Address</label>
-        <textarea id="address" rows="3" placeholder="Street, Area, etc." required></textarea>
-      </div>
-
-      <div class="form-group">
-        <label>City</label>
-        <input type="text" placeholder="City" required>
-      </div>
-
-      <div class="form-group">
-        <label>State</label>
-        <input type="text" placeholder="State" required>
-      </div>
-
-      <div class="form-group">
-        <label>PIN</label>
-        <input type="text" placeholder="Postal Code" required>
-      </div>
-
-      <div class="form-group">
-        <label for="position">Position Applied For</label>
-        <input id="position" type="text" required>
-      </div>
-
-      <div class="form-group">
-        <label>Preferred Department</label>
-        <div class="checkbox-group">
-          <label><input type="radio" name="department" value="Production" required> Production</label>
-          <label><input type="radio" name="department" value="Quality Control"> Quality Control</label>
-          <label><input type="radio" name="department" value="Textile Design"> Textile Design / Sampling</label>
-          <label><input type="radio" name="department" value="Merchandising"> Merchandising / Exports</label>
-          <label><input type="radio" name="department" value="HR"> HR / Admin</label>
-          <label><input type="radio" name="department" value="Finance"> Finance / Accounts</label>
-          <label><input type="radio" name="department" value="Logistics"> Logistics / Supply Chain</label>
-          <label>
-            <input type="radio" name="department" value="Other" id="dept-other-radio"> Other
-          </label>
-          <input
-            type="text"
-            id="dept-other-text"
-            name="department-custom"
-            placeholder="Please specify"
-            style="display: none; margin-top: 0.5rem;"
-          />
-        </div>
-      </div>
-
-      <button type="submit">Submit Application</button>
-    </form>
+    <button class="talent-pool-btn" id="join-talent-pool">Join Talent Pool</button>
   </section>
+
+  <!-- Notification Bell -->
+  <div class="notification-bell" id="notification-bell">
+    <i class="fas fa-bell"></i>
+    <span class="badge" id="notification-badge" style="display: none;">1</span>
+  </div>
+
+  <!-- Talent Pool Modal -->
+  <div class="modal" id="talent-pool-modal">
+    <div class="modal-content">
+      <button class="close-modal" id="close-modal">&times;</button>
+      <h2>Join Our Talent Pool</h2>
+      <p>Share your details and we'll contact you when relevant opportunities arise.</p>
+      
+      <form class="modal-form" id="talent-pool-form">
+        <div>
+          <label for="modal-name">Full Name</label>
+          <input id="modal-name" type="text" required>
+        </div>
+        
+        <div>
+          <label for="modal-email">Email</label>
+          <input id="modal-email" type="email" required>
+        </div>
+        
+        <div>
+          <label for="modal-phone">Phone Number</label>
+          <input id="modal-phone" type="tel" required>
+        </div>
+        
+        <div>
+          <label for="modal-position">Position(s) of Interest</label>
+          <input id="modal-position" type="text" placeholder="e.g. Textile Designer, Quality Control">
+        </div>
+        
+        <div>
+          <label for="modal-experience">Years of Experience</label>
+          <input id="modal-experience" type="text">
+        </div>
+        
+        <div>
+          <label for="modal-resume">Resume (Optional)</label>
+          <input id="modal-resume" type="file" accept=".pdf,.doc,.docx">
+        </div>
+        
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Job Alert Modal -->
+  <div class="modal" id="job-alert-modal">
+    <div class="modal-content">
+      <button class="close-modal" id="close-job-modal">&times;</button>
+      <h2>New Opportunity Available!</h2>
+      <div id="job-alert-content">
+        <!-- Content will be dynamically inserted here -->
+      </div>
+      <button class="talent-pool-btn" id="apply-now-btn" style="margin-top: 20px;">Apply Now</button>
+    </div>
+  </div>
 
   <script>
     // JS for Opportunities
@@ -586,40 +657,77 @@
       });
     });
 
-    // JS for Gender Other option
-    const genderRadios = document.querySelectorAll('input[name="gender"]');
-    const customGenderInput = document.getElementById('custom-gender');
-    const otherRadio = document.getElementById('gender-other-radio');
+    // Talent Pool Modal
+    const talentPoolBtn = document.getElementById('join-talent-pool');
+    const talentPoolModal = document.getElementById('talent-pool-modal');
+    const closeModalBtn = document.getElementById('close-modal');
+    const talentPoolForm = document.getElementById('talent-pool-form');
+    const notificationBell = document.getElementById('notification-bell');
+    const jobAlertModal = document.getElementById('job-alert-modal');
+    const closeJobModalBtn = document.getElementById('close-job-modal');
+    const notificationBadge = document.getElementById('notification-badge');
 
-    genderRadios.forEach(radio => {
-      radio.addEventListener('change', () => {
-        if (otherRadio.checked) {
-          customGenderInput.style.display = 'block';
-          customGenderInput.required = true;
-        } else {
-          customGenderInput.style.display = 'none';
-          customGenderInput.required = false;
-        }
-      });
+    talentPoolBtn.addEventListener('click', () => {
+      talentPoolModal.style.display = 'flex';
     });
 
-    // JS for Department Other option
-    const deptRadios = document.querySelectorAll('input[name="department"]');
-    const otherDeptRadio = document.getElementById('dept-other-radio');
-    const otherDeptText  = document.getElementById('dept-other-text');
-
-    deptRadios.forEach(radio => {
-      radio.addEventListener('change', () => {
-        if (otherDeptRadio.checked) {
-          otherDeptText.style.display = 'block';
-          otherDeptText.required = true;
-        } else {
-          otherDeptText.style.display = 'none';
-          otherDeptText.required = false;
-          otherDeptText.value = '';
-        }
-      });
+    closeModalBtn.addEventListener('click', () => {
+      talentPoolModal.style.display = 'none';
     });
+
+    closeJobModalBtn.addEventListener('click', () => {
+      jobAlertModal.style.display = 'none';
+    });
+
+    // Close modal when clicking outside
+    window.addEventListener('click', (e) => {
+      if (e.target === talentPoolModal) {
+        talentPoolModal.style.display = 'none';
+      }
+      if (e.target === jobAlertModal) {
+        jobAlertModal.style.display = 'none';
+      }
+    });
+
+    // Form submission
+    talentPoolForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      alert('Thank you for joining our talent pool! We will notify you when relevant opportunities become available.');
+      talentPoolModal.style.display = 'none';
+      talentPoolForm.reset();
+    });
+
+    // Notification bell - this would be triggered when admin posts a new job
+    notificationBell.addEventListener('click', () => {
+      // In a real implementation, this would check for new job postings
+      // For demo purposes, we'll show a sample job alert
+      if (notificationBadge.style.display !== 'none') {
+        showJobAlert({
+          title: "Textile Designer Needed",
+          description: "We're looking for an experienced textile designer to join our creative team. Minimum 3 years experience in home textiles required.",
+          date: "Posted: May 31, 2023"
+        });
+        notificationBadge.style.display = 'none';
+      } else {
+        alert("No new job alerts at this time. We'll notify you when positions become available.");
+      }
+    });
+
+    // Function to show job alert (would be called when admin adds a new job)
+    function showJobAlert(job) {
+      const content = document.getElementById('job-alert-content');
+      content.innerHTML = `
+        <h3>${job.title}</h3>
+        <p>${job.description}</p>
+        <p><small>${job.date}</small></p>
+      `;
+      jobAlertModal.style.display = 'flex';
+    }
+
+    // Simulate a new job posting after 5 seconds for demo purposes
+    setTimeout(() => {
+      notificationBadge.style.display = 'flex';
+    }, 5000);
   </script>
   
 </body>
